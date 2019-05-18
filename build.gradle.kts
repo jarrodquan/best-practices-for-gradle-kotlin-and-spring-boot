@@ -11,16 +11,6 @@ allprojects {
     group = "com.jarrodquan"
     version = "0.0.1-SNAPSHOT"
 
-    apply(plugin = "org.jetbrains.kotlin.jvm")
-
-    dependencies {
-        implementation(kotlin("stdlib-jdk8"))
-        implementation(kotlin("reflect"))
-
-        testImplementation(kotlin("test"))
-        testImplementation(kotlin("test-junit"))
-    }
-
     buildscript {
         repositories {
             mavenLocal()
@@ -39,5 +29,17 @@ allprojects {
         }
         jcenter()
         mavenCentral()
+    }
+}
+
+subprojects {
+    apply(plugin = "org.jetbrains.kotlin.jvm")
+
+    dependencies {
+        implementation(kotlin("stdlib-jdk8"))
+        implementation(kotlin("reflect"))
+
+        testImplementation(kotlin("test"))
+        testImplementation(kotlin("test-junit"))
     }
 }

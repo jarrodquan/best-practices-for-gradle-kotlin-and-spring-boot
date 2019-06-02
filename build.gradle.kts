@@ -1,15 +1,12 @@
-plugins {
-    kotlin("jvm") version "1.3.21"
-}
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+plugins {
+    kotlin("jvm") version "1.3.31"
 }
 
 allprojects {
     group = "com.jarrodquan"
-    version = "0.0.1-SNAPSHOT"
+    version = "0.0.1.SNAPSHOT"
 
     buildscript {
         repositories {
@@ -33,7 +30,9 @@ allprojects {
 }
 
 subprojects {
-    apply(plugin = "org.jetbrains.kotlin.jvm")
+    apply {
+        plugin("org.jetbrains.kotlin.jvm")
+    }
 
     dependencies {
         implementation(kotlin("stdlib-jdk8"))
@@ -41,5 +40,24 @@ subprojects {
 
         testImplementation(kotlin("test"))
         testImplementation(kotlin("test-junit"))
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+            jvmTarget = "11"
+        }
+    }
+
+    tasks.clean {
+        doLast {
+            project.delete("out")
+            println("Folder \"out\" has been cleared.")
+        }
     }
 }

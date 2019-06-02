@@ -11,10 +11,10 @@ pluginManagement {
 }
 
 rootProject.name = "shack"
-include("application")
-include("application:domain")
-include("application:implementation")
-include("application:port")
-include("application:mysql-port")
-include("mysql-adapter")
+include("app-common")
+include("app-domain")
+include("app-port")
+include("app-port-repo")
+include("app-adapter")
+include("repo-mysql-adapter")
 include("web-adapter")

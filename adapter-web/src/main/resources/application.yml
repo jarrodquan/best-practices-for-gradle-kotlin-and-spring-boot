@@ -1,0 +1,17 @@
+shack:
+  upload-location: ${user.home}/shack/upload
+spring:
+  application:
+    name: shack-web-adapter
+  servlet:
+    multipart:
+      max-file-size: 1GB
+      max-request-size: 1GB
+      location: ${user.home}/.shack/upload
+logging:
+  path: ${user.dir}
+  file: shack.log
+  level:
+    root: INFO
+    com.jarrodquan.shack: DEBUG
+    org.springframework.web.servlet: DEBUG

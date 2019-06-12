@@ -3,5 +3,5 @@ dependencies {
     implementation(project(":app-domain"))
     implementation(project(":app-port"))
     implementation(project(":app-port-repo"))
-    implementation(project(":repo-mysql-adapter"))
+    implementation(project(":adapter-repo-mysql"))
 }

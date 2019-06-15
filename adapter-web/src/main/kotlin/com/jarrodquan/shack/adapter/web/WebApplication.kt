@@ -10,7 +10,7 @@ import org.springframework.context.annotation.FilterType
 @ComponentScan(
         basePackages = [
             "com.jarrodquan.shack.app.adapter",
-            "com.jarrodquan.shack.web"
+            "com.jarrodquan.shack.adapter.web"
         ],
         includeFilters = [
             Filter(type = FilterType.ANNOTATION, classes = [Component::class])

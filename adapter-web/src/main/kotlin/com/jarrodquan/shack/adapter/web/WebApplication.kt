@@ -10,6 +10,7 @@ import org.springframework.context.annotation.FilterType
 @ComponentScan(
         basePackages = [
             "com.jarrodquan.shack.app.adapter",
+            "com.jarrodquan.shack.adapter.repo.mysql",
             "com.jarrodquan.shack.adapter.web"
         ],
         includeFilters = [

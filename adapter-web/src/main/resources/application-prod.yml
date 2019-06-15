@@ -1,0 +1,6 @@
+shack:
+  upload-location: ${user.home}/shack/upload
+logging:
+  level:
+    root: WARN
+    com.jarrodquan.shack: INFO
